@@ -6,7 +6,7 @@ require "ess/version"
 
 Gem::Specification.new do |s|
   s.name        = "aliyun-ess"
-  s.version     = Aliyun::ESS::VERSION
+  s.version     = Aliyun::ESS::Version
   s.authors     = ["Joshua Li"]
   s.email       = ["sunrisela@gmail.com"]
   s.homepage    = "https://github.com/sunrisela"

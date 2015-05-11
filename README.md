@@ -45,9 +45,9 @@ The minimum connection options that you must specify are your access key id and 
 
 For convenience, if you set two special environment variables with the value of your access keys, the console will automatically create a default connection for you. For example:
 
-  % cat .aliyun_access_keys
-  export ACCESS_KEY_ID='abcdefghijklmnop'
-  export SECRET_ACCESS_KEY='1234567891012345'
+    % cat .aliyun_access_keys
+    export ACCESS_KEY_ID='abcdefghijklmnop'
+    export SECRET_ACCESS_KEY='1234567891012345'
 
 Then load it in your shell's rc file.
 

@@ -1,4 +1,4 @@
 source 'http://ruby.taobao.org'
 
-gem "yajl-ruby"
-gem "rack"
+# Specify your gem's dependencies in ess-ruby-sdk.gemspec
+gemspec

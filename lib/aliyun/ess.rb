@@ -9,7 +9,6 @@ require 'date'
 require 'open-uri'
 require 'yajl/json_gem'
 require 'rack/utils'
-require 'byebug'
 
 $:.unshift(File.dirname(__FILE__))
 

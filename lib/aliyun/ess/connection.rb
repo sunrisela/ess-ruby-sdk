@@ -33,7 +33,7 @@ module Aliyun
           
           request_uri = "/?"+query_string_authentication(params)
 
-          puts request_uri
+          # puts request_uri
 
           request = request_method(verb).new(request_uri, headers)
           add_user_agent!(request)

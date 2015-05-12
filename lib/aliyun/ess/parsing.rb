@@ -42,6 +42,11 @@ module Aliyun
           end
         end
 
+        def slice(*keys)
+          keys.map! { |key| key.to_s }
+          keys.inject({}) { |hash, k| hash[k] = self[k] if has_key?(k); hash }
+        end
+
         private
 
         def parse

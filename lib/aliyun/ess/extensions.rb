@@ -1,13 +1,6 @@
 # -*- encoding : utf-8 -*-
 #:stopdoc:
 
-class Hash
-  def slice(*keys)
-    keys.map! { |key| key.to_s }
-    keys.inject(Hash.new) { |hash, k| hash[k] = self[k] if has_key?(k); hash }
-  end unless public_method_defined? :slice
-end
-
 class String
   # ActiveSupport adds an underscore method to String so let's just use that one if
   # we find that the method is already defined

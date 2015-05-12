@@ -26,7 +26,7 @@ module Aliyun
         end
   
         def encoded_canonical
-          digest   = OpenSSL::Digest::Digest.new('sha1')
+          digest   = OpenSSL::Digest.new('sha1')
           b64_hmac = [OpenSSL::HMAC.digest(digest, secret_access_key+'&', sign_string)].pack("m").strip
           url_encode? ? CGI.escape(b64_hmac) : b64_hmac
         end

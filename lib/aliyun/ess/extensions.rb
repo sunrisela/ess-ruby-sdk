@@ -25,40 +25,24 @@ class String
     string
   end unless public_method_defined? :camelize
 
-  if RUBY_VERSION >= '1.9'
-    def valid_utf8?
-      dup.force_encoding('UTF-8').valid_encoding?
-    end
-  else
-    def valid_utf8?
-      scan(Regexp.new('[^\x00-\xa0]', nil, 'u')) { |s| s.unpack('U') }
-      true
-    rescue ArgumentError
-      false
-    end
-  end
+  def valid_utf8?
+    dup.force_encoding('UTF-8').valid_encoding?
+  end unless public_method_defined? :valid_utf8?
   
-  # All paths in in OSS have to be valid unicode so this takes care of 
+  # All paths in in ESS have to be valid unicode so this takes care of 
   # cleaning up any strings that aren't valid utf-8 according to String#valid_utf8?
-  if RUBY_VERSION >= '1.9'
-    def remove_extended!
-      sanitized_string = ''
-      each_byte do |byte|
-        character = byte.chr
-        sanitized_string << character if character.ascii_only?
-      end
-      sanitized_string
+  def remove_extended!
+    sanitized_string = ''
+    each_byte do |byte|
+      character = byte.chr
+      sanitized_string << character if character.ascii_only?
     end
-  else
-    def remove_extended!
-      #gsub!(/[\x80-\xFF]/) { "%02X" % $&[0] }
-      gsub!(Regext.new('/[\x80-\xFF]')) { "%02X" % $&[0] }
-    end
-  end
+    sanitized_string
+  end unless public_method_defined? :remove_extended!
   
   def remove_extended
     dup.remove_extended!
-  end
+  end unless public_method_defined? :remove_extended
 end
 
 class CoercibleString < String
@@ -85,7 +69,7 @@ class CoercibleString < String
     # so unless the string looks like that, don't even try, otherwise it might convert an object's
     # key from something like '03 1-2-3-Apple-Tree.mp3' to Sat Feb 03 00:00:00 CST 2001.
     def datetime_format
-      /^\d{4}-\d{2}-\d{2}\w\d{2}:\d{2}:\d{2}/
+      /^\d{4}-\d{2}-\d{2}\w\d{2}:\d{2}/
     end
 end
 
@@ -169,6 +153,6 @@ module SelectiveAttributeProxy
 
   module ClassMethods
   end
-end
+end unless defined? SelectiveAttributeProxy
 
 #:startdoc:

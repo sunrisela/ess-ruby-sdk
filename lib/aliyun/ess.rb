@@ -14,7 +14,7 @@ require 'byebug'
 $:.unshift(File.dirname(__FILE__))
 
 require 'ess/version'
-require 'ess/extensions' unless defined? Aliyun::OSS
+require 'ess/extensions'
 require 'ess/exceptions'
 require 'ess/error'
 require 'ess/authentication'
@@ -25,6 +25,7 @@ require 'ess/service'
 require 'ess/collection'
 require 'ess/scaling_group'
 require 'ess/scaling_rule'
+require 'ess/scaling_instance'
 require 'ess/response'
 
 

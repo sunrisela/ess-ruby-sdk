@@ -13,7 +13,7 @@ module Aliyun
           c.items.first
         end
 
-        def execute(params={'ScalingRuleAri' => 'ari:acs:ess:cn-hangzhou:1358641544878377:scalingrule/duK8myelWehmcB5WH9cUTsu7'}, options={})
+        def execute(params={}, options={})
           params = {'Action' => 'ExecuteScalingRule'}.merge params
           get('/', params, options)
         end

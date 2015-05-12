@@ -34,7 +34,19 @@ module Aliyun
         end
       end
 
+      def scaling_instances
+        @scaling_instances ||= begin
+          build_scaling_instances!
+        end
+      end
+
       private
+
+      def build_scaling_instances!
+        items = ScalingInstance.find(:scaling_group_id => id).items
+        items.each {|e| register(e) }
+        items
+      end
 
       def build_scaling_rules!
         items = ScalingRule.find(:scaling_group_id => id).items

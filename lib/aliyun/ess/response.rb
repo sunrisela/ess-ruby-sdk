@@ -77,6 +77,14 @@ module Aliyun
         end
       end
     end
+
+    class ScalingInstance
+      class Response < Base::Response
+        def items
+          (parsed['scaling_instances'] && parsed['scaling_instances']['scaling_instance']) || []
+        end
+      end
+    end
     
 
     # Requests whose response code is between 300 and 599 and contain an <Error></Error> in their body

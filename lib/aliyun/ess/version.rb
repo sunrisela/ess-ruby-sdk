@@ -4,7 +4,7 @@ module Aliyun
     module VERSION #:nodoc:
       MAJOR    = '0'
       MINOR    = '1'
-      TINY     = '4'
+      TINY     = '5'
       BETA     = nil
       #BETA     = Time.now.to_i.to_s
     end

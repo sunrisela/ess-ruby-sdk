@@ -64,6 +64,8 @@ See more connection details at Aliyun::ESS::Connection::Management::ClassMethods
     scaling_group     = group_collections.items.first
     scaling_rule      = scaling_group.scaling_rules.first
     scaling_rule.execute
+    
+    scaling_instances = scaling_group.scaling_instances
 
 ## Contributing
 

@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
 
   s.files         = Dir["{bin,lib}/**/*", "CHANGELOG", "Gemfile", "INSTALL", "LICENSE.txt", "Rakefile", "README.md"]
-  #s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.executables  << "ess"
   s.test_files    = Dir["test/**/*"]
   s.require_paths = ["lib"]
 

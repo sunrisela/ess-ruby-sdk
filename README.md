@@ -7,7 +7,7 @@ Full documentation of the currently supported API can be found at http://www.ali
 
 Add this line to your application's Gemfile:
 
-    gem 'ess-ruby-sdk'
+    gem 'aliyun-ess'
 
 And then execute:
 
